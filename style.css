@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* 그 보이는 화면의 백프로를 써라. */
+
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.wrapper {
+  width: 500px;
+  height: 500px;
+  border: 10px solid darkblue;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  /* transition: all 400ms ease-in-out; -> transfrom scale */
+  /* transition: border 400ms ease-in-out; */
+  /* 밑에 호버는 색상 변환하는 것을 입력하는 것. 위의 트랜지션은 밑의 호버 속도 및 효과를 조정하기 위해 입력하는 값이다. 
+  
+    transfrom all, transfrom border 이것은 hover시에 변화가 올 때 모든 거에 적용시켜라 아니면 보더에 적용시켜라 이것을 의미한다.*/
+}
+
+/* .wrapper:hover {
+  border: 10px solid red; 파란색에서 빨란색으로 변함
+  이건 래퍼에 호버되었을 때 래퍼가 돌아가라는 의미이다.
+} */
+
+/* .wrapper:hover {
+  transform:scale(1.2);
+  /* 위의 트랜지션에 border 대신 all을 이용한다.
+} */
+
+/* .wrapper:hover .box{
+  transform: rotate(45deg);
+} */
+/* .wrapper:hover .box 이 의미는 래퍼에 호버되었을 때 박스들이 돌아가라는 의미이다.
+즉 아까랑 다르게 이때는 띄어써야 한다. 그래서 밑에 박스한테 트렌지션 값을 줘야 한다. */
+
+.wrapper:hover .box{
+  transform: rotate(-45deg);
+}
+
+.wrapper:hover .box.red{
+  border: 5px solid red
+}
+
+.wrapper:hover .box.yellow{
+  border: 5px solid yellow
+}
+
+.wrapper:hover .box.box.green{
+  border: 5px solid green
+}
+
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 5px solid black;
+  transition: all 400ms ease-in-out;
+}
+
+
+.box.red {
+  background-color: red;
+}
+
+.box.yellow {
+  background-color: yellow;
+  align-self: center;
+}
+
+.box.green {
+  background-color: green;
+  align-self: end;
+}
+
+/* 클래스 안의 클래스를 부를 때는 붙여 써야 한다. 띄어쓰면 안 된다.
+클래스 안의 태그를 쓸 때는 앞에 클래스 명에 태그를 띄어써서 입력한다.  */
+
+
+
+a:hover {
+  color: dodgerblue;
+}
+/* a 태그 말고 ul이나 li 쓰면 안 되냐고 할 수 있는데 a태그 안에 글씨가 포함되어 있기 때문에 a로 입력을 해야 한다. */
+
+a:active {
+  color: red;
+}
